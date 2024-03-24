@@ -1,0 +1,37 @@
+# Main settings section #
+[alias]
+	up = fetch -p
+	last = log -1 HEAD --stat
+	l = remote -v
+	b = branch -a
+	c = commit -m
+	s = status -sb
+	stat = status
+	sub = submodule update --recursive --remote
+	conf = config --list --show-origin --show-scope
+	aliases = config --get-regex ^alias
+
+[init]
+	defaultBranch = master
+
+[core]
+	autocrlf = false
+	filemode = false
+	sshCommand = C:/Windows/System32/OpenSSH/ssh.exe
+# --------------------- #
+
+# GPG Signing section #
+[commit]
+	gpgsign = true
+
+[gpg]
+	format = ssh
+
+[gpg "ssh"]
+	program = C:\\Program Files\\1Password\\app\\8\\op-ssh-sign.exe
+# ------------------- #
+
+# Include SSH creds section #
+[includeIf "gitdir:**/windows-dev/**/.git"]
+  path = github.gitconfig
+# ------------------------- #
