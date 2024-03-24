@@ -32,6 +32,9 @@
 # ------------------- #
 
 # Include SSH creds section #
+[includeIf "gitdir:**/.config/**/.git"]
+  path = github.gitconfig
+
 [includeIf "gitdir:**/windows-dev/**/.git"]
   path = github.gitconfig
 # ------------------------- #
