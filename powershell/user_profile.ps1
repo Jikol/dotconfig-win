@@ -8,6 +8,8 @@ function Invoke-EmptyFile { echo $null >> $args }
 function Execute-Batch-File { Start-Process "$args" -NoNewWindow }
 function Invoke-Svg-Convert { inkscape -o $args[1] -w $args[2] -h $args[2] $args[0] }
 function Invoke-Profile-Reload { . $env:USERPROFILE\.config\powershell\user_profile.ps1 }
+function Invoke-Wsl-Projects { wsl exec tmux new-session -A -s projects }
+function Invoke-Wsl-Main { wsl exec tmux new-session -A -s main }
 
 # Procedural Functions
 function Execute-Wsl-Nautilus { 
@@ -43,7 +45,6 @@ Import-Module PSFzf
 Set-PsFzfOption -PSReadlineChordReverseHistory 'Ctrl+h'
 
 # Simple Alias
-Set-Alias l wsl
 Set-Alias sudo gsudo
 Set-Alias vim nvim
 Set-Alias ip ipconfig
@@ -61,6 +62,8 @@ Set-Alias linit Invoke-New-Wsl
 Set-Alias lrm Invoke-Remove-Wsl
 Set-Alias ink Invoke-Svg-Convert
 Set-Alias rld Invoke-Profile-Reload
+Set-Alias dev Invoke-Wsl-Projects
+Set-Alias l Invoke-Wsl-Main
 
 # Program Alias
 Set-Alias less "$env:USERPROFILE\scoop\apps\git\current\usr\bin\less.exe"

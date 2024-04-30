@@ -8,22 +8,21 @@ Persistent(true)
 	Send("!{Space}")
 }
 
-^!w::
+^!l::
 {
-	Run("wt --maximized -p Linux")
-	;WinWait("ahk_exe" . "WindowsTerminal.exe")
-	;WinActivate("ahk_exe" . "WindowsTerminal.exe")
+	Run("wt --fullscreen -p Linux",,,&PID)
+	return
+}
+
+^!p::
+{
+	Run("wt --fullscreen wsl tmux new-session -A -s projects",,,&PID)
 	return
 }
 
 ^!z::
 {
-	Run("wt --fullscreen btop")
-	;btopPID := 0
-	;test := Run("wt --fullscreen btop",,,&btopPID)
-	;MsgBox(test)
-	;WinWait("ahk_pid " . btopPID)
-	;WinActivate("ahk_pid " . btopPID)
+    Run("wt --fullscreen btop",,,&PID)
 	return
 }
 
@@ -42,4 +41,5 @@ Persistent(true)
 #q::
 {
 	WinClose("A")
+	return
 }
