@@ -3,7 +3,7 @@ function Clear-Console { clear }
 function Invoke-Wsl-Ls { wsl exec exa --icons }
 function Invoke-Wsl-Ll { wsl exec exa -l --icons }
 function Invoke-Wsl-La { wsl exec exa -la --icons }
-function Invoke-Wsl-Projects { wsl exec tmux new-session -A -s projects }
+function Invoke-Wsl-Dev { wsl exec tmux new-session -A -s dev }
 function Invoke-Wsl-Main { wsl exec tmux new-session -A -s main }
 
 # Wrapper Functions
@@ -38,7 +38,7 @@ Set-Alias ip ipconfig
 Set-Alias ll Invoke-Wsl-Ll
 Set-Alias ls Invoke-Wsl-Ls
 Set-Alias la Invoke-Wsl-La
-Set-Alias dev Invoke-Wsl-Projects
+Set-Alias dev Invoke-Wsl-Dev
 Set-Alias main Invoke-Wsl-Main
 Set-Alias ssh Invoke-Ssh-Wrapper
 
