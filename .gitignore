@@ -1,4 +1,5 @@
-/apps
-/MionixHub
-/scoop
-/configstore
+apps
+MionixHub
+scoop
+configstore
+jgit
