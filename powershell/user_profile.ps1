@@ -4,7 +4,7 @@ function Invoke-Wsl-Ls { wsl exec exa --icons }
 function Invoke-Wsl-Ll { wsl exec exa -l --icons }
 function Invoke-Wsl-La { wsl exec exa -la --icons }
 function Invoke-Wsl-Dev { wsl exec tmux new-session -A -s dev }
-function Invoke-Wsl-Main { wsl exec tmux new-session -A -s main }
+function Invoke-Wsl-Conf { wsl exec tmux new-session -A -s conf }
 
 # Wrapper Functions
 function Invoke-Ssh-Wrapper {
