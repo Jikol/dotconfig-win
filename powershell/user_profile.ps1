@@ -39,7 +39,7 @@ Set-Alias ll Invoke-Wsl-Ll
 Set-Alias ls Invoke-Wsl-Ls
 Set-Alias la Invoke-Wsl-La
 Set-Alias dev Invoke-Wsl-Dev
-Set-Alias main Invoke-Wsl-Main
+Set-Alias conf Invoke-Wsl-Conf
 Set-Alias ssh Invoke-Ssh-Wrapper
 
 # Program Alias
@@ -48,6 +48,7 @@ Set-Alias which "$env:USERPROFILE\scoop\apps\git\current\usr\bin\which.exe"
 Set-Alias tail "$env:USERPROFILE\scoop\apps\git\current\usr\bin\tail.exe"
 Set-Alias mkdir "$env:USERPROFILE\scoop\apps\git\current\usr\bin\mkdir.exe"
 Set-Alias rm "$env:USERPROFILE\scoop\apps\git\current\usr\bin\rm.exe" 
+Set-Alias touch "$env:USERPROFILE\scoop\apps\git\current\usr\bin\touch.exe" 
 
 # Environment Variables
 Set-Variable "CONFIG_VIM" "$env:USERPROFILE\AppData\Local\nvim\init.vim"
