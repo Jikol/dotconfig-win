@@ -33,6 +33,7 @@ Set-PsFzfOption -PSReadlineChordReverseHistory 'Ctrl+h'
 Set-Alias sudo gsudo
 Set-Alias vim nvim
 Set-Alias ip ipconfig
+Set-Alias cat bat
 
 # Functions Alias
 Set-Alias ll Invoke-Wsl-Ll
@@ -50,9 +51,13 @@ Set-Alias mkdir "$env:USERPROFILE\scoop\apps\git\current\usr\bin\mkdir.exe"
 Set-Alias rm "$env:USERPROFILE\scoop\apps\git\current\usr\bin\rm.exe" 
 Set-Alias touch "$env:USERPROFILE\scoop\apps\git\current\usr\bin\touch.exe" 
 
-# Environment Variables
+# Classic Variables
 Set-Variable "CONFIG_VIM" "$env:USERPROFILE\AppData\Local\nvim\init.vim"
 Set-Variable "CONFIG_POWERSHELL" "$env:USERPROFILE\.config\powershell\user_profile.ps1"
+
+# Environment Variables
+$env:BAT_CONFIG_DIR = "$env:USERPROFILE\.config\bat"
+$env:GIT_CONFIG_GLOBAL = "$env:USERPROFILE\.config\git\config"
 
 # Autocompletions
 Invoke-Expression -Command "$env:USERPROFILE\.config\powershell\task.ps1"

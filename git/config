@@ -1,3 +1,7 @@
+# Static includes #
+[include]
+	path = ~/.config/delta/catppuccin.gitconfig
+
 # Main settings section #
 [alias]
 	up = fetch -p
@@ -6,6 +10,7 @@
 	b = branch -a
 	c = commit -m
 	s = status -sb
+	d = diff
 	stat = status
 	ll = log --oneline --decorate --graph
 	sub = submodule update --recursive --remote
@@ -19,23 +24,27 @@
 	autocrlf = false
 	filemode = false
 	sshCommand = C:/Windows/System32/OpenSSH/ssh.exe
+	pager = delta
+
+[delta]
+  features = catppuccin-mocha
+  side-by-side = true
+  navigate = true
+
+[merge]
+  conflictstyle = diff3
+
+[diff]
+  colorMoved = default
 # --------------------- #
 
 # GPG Signing section #
-[commit]
-	gpgsign = true
-
-[gpg]
-	format = ssh
-
-[gpg "ssh"]
-	program = C:\\Program Files\\1Password\\app\\8\\op-ssh-sign.exe
 # ------------------- #
 
 # Include SSH creds section #
 [includeIf "gitdir:**/.config/**/.git"]
   path = github.gitconfig
 
-[includeIf "gitdir:**/Projects/windows-dev/**/.git"]
+[includeIf "gitdir:**/windows-dev/**/.git"]
   path = github.gitconfig
 # ------------------------- #
