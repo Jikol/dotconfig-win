@@ -10,13 +10,13 @@ Persistent(true)
 
 ^!l::
 {
-	Run("wt --fullscreen -p Linux",,,&PID)
+	Run("wt --fullscreen -p Dev",,,&PID)
 	return
 }
 
-^!p::
+^!w::
 {
-	Run("wt --fullscreen wsl tmux new-session -A -s projects",,,&PID)
+	Run("wt --fullscreen -p Terminal",,,&PID)
 	return
 }
 
