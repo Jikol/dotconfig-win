@@ -23,7 +23,6 @@ oh-my-posh init pwsh --config $env:USERPROFILE\.config\omp\fluent.json | Invoke-
 # PSReadLine
 Set-PSReadLineOption -BellStyle None
 Set-PSReadLineOption -PredictionSource History
-Set-PSReadLineOption -PredictionViewStyle ListView
 
 # Fzf
 Import-Module PSFzf
