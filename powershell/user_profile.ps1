@@ -3,6 +3,7 @@ function Clear-Console { clear }
 function Invoke-Wsl-Ls { wsl exec exa --icons }
 function Invoke-Wsl-Ll { wsl exec exa -l --icons }
 function Invoke-Wsl-La { wsl exec exa -la --icons }
+function Invoke-Wsl-WorkDev { wsl exec tmux new-session -A -s workdev }
 function Invoke-Wsl-Dev { wsl exec tmux new-session -A -s dev }
 function Invoke-Wsl-Conf { wsl exec tmux new-session -A -s conf }
 
@@ -38,6 +39,7 @@ Set-Alias cat bat
 Set-Alias ll Invoke-Wsl-Ll
 Set-Alias ls Invoke-Wsl-Ls
 Set-Alias la Invoke-Wsl-La
+Set-Alias workdev Invoke-Wsl-WorkDev
 Set-Alias dev Invoke-Wsl-Dev
 Set-Alias conf Invoke-Wsl-Conf
 Set-Alias ssh Invoke-Ssh-Wrapper
