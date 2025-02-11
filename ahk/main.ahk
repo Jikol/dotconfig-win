@@ -10,13 +10,13 @@ Persistent(true)
 
 ^!l::
 {
-	Run("wt --fullscreen -p Dev",,,&PID)
+	Run("wt --fullscreen -p Tmux",,,&PID)
 	return
 }
 
-^!w::
+^!p::
 {
-	Run("wt --fullscreen -p Terminal",,,&PID)
+	Run("wt --fullscreen -p PowerShell",,,&PID)
 	return
 }
 

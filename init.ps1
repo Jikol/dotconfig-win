@@ -1,18 +1,16 @@
 # Create symbolic links
-function rm-link {
+function ln {
     param (
-        [string]$link
+        [string]$Link,
+        [string]$Target
     )
-    if (test-path $link) {
-        remove-item $link -force -recurse
-    }
+    if (Test-Path $Link) { Remove-Item $Link -Force -Recurse }
+    New-Item -ItemType SymbolicLink -Path $Link -Target $Target | Out-Null
 }
 
-$link = "$env:USERPROFILE\.utils"
-rm-link -link $link
-New-Item -ItemType SymbolicLink -Path $link -Target "$env:USERPROFILE\.config\.utils"
+ln "$HOME\.ssh" "$HOME\.config\.ssh"
+ln "$HOME\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json" "$HOME\.config\wt\settings.json"
+ln "$HOME\Documents\PowerShell\profile.ps1" "$HOME\.config\pwsh\profile.ps1"
 
-$link = "$env:USERPROFILE\.ssh"
-rm-link -link $link
-New-Item -ItemType SymbolicLink -Path $link -Target "$env:USERPROFILE\.config\.ssh"
+Write-Host "Symbolic links created!" -ForegroundColor Green
 
